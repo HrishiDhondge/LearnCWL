@@ -1,0 +1,7 @@
+pir:
+  class: File
+  path: target.ali
+
+pdb:
+  class: File
+  path: template.pdb

@@ -1,0 +1,9 @@
+eval:
+  class: File
+  path: side_chain_fixed_models.pdb
+
+temp:
+  class: File
+  path: template.pdb
+
+dope_graph: DOPE_score_graph.png

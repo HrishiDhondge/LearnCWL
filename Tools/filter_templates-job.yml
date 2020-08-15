@@ -1,0 +1,3 @@
+List_Of_PDBs:
+  class: File
+  path: List_Of_PDB_IDs
