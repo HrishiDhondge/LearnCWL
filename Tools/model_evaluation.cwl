@@ -19,11 +19,11 @@ baseCommand: touch
 stdout: DOPE-score_graph.png
 
 inputs:
-  eval:
+  5_side-chain_fixed_models:
     type: File
     inputBinding:
       position: 1
-  temp:
+  template.pdb:
     type: File
     inputBinding:
       position: 2

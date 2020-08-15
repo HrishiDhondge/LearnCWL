@@ -1,8 +1,8 @@
-eval:
+5_side-chain_fixed_models:
   class: File
   path: side_chain_fixed_models.pdb
 
-temp:
+template.pdb:
   class: File
   path: template.pdb
 

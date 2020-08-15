@@ -15,7 +15,7 @@ doc: |
 baseCommand: [python]
 stdout: models.pdb
 inputs:
-  alignment:
+  alignment_file:
     type: File
     inputBinding:
       position: 1

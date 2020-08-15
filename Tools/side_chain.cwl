@@ -15,7 +15,7 @@ doc: |
 baseCommand: [python]
 stdout: side_chain_fixed_models.pdb
 inputs:
-  models:
+  5_models:
     type: File
     inputBinding:
       position: 1

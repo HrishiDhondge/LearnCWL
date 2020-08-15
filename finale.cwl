@@ -3,14 +3,14 @@ cwlVersion: v1.0
 class: Workflow
 
 inputs:
-  sequence: File
+  target_sequence(Fasta): File
   
 outputs:
-  graph:
+  DOPE_score_graph:
     type: File
     outputSource: model_evaluation/DOPE_score
 
-  models:
+  5_models:
     type: File
     outputSource: side-chain_fixing/fixed_models
 
@@ -20,7 +20,7 @@ steps:
   template_search:
     run: Tools/HHblits.cwl
     in:
-      fasta: sequence
+      fasta: target_sequence(Fasta)
     out: [List_of_PDB_IDs]
 
   template_filtering:
@@ -32,31 +32,31 @@ steps:
   fasta2pir:
     run: Tools/fasta2pir.cwl
     in:
-      fasta: sequence
+      fasta: target_sequence(Fasta)
     out: [pir]
 
   target-template_alignment:
     run: Tools/alignment.cwl
     in: 
-      pdb: template_filtering/Template
-      pir: fasta2pir/pir
+      template.pdb: template_filtering/Template
+      sequence_in_pir: fasta2pir/pir
     out: [alignment]
 
   backbone_generation:
     run: Tools/backbone.cwl
     in:
-      alignment: target-template_alignment/alignment
+      alignment_file: target-template_alignment/alignment
     out: [model]
 
   side-chain_fixing:
     run: Tools/side_chain.cwl
     in:
-      models: backbone_generation/model
+      5_models: backbone_generation/model
     out: [fixed_models]
 
   model_evaluation:
     run: Tools/model_evaluation.cwl
     in:
-      eval: side-chain_fixing/fixed_models
-      temp: template_filtering/Template
+      5_side-chain_fixed_models: side-chain_fixing/fixed_models
+      template.pdb: template_filtering/Template
     out: [DOPE_score]

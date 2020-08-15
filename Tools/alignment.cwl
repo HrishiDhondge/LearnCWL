@@ -16,13 +16,13 @@ baseCommand: [python]
 stdout: target-temp.ali
 
 inputs:
-  pir:
+  sequence_in_pir:
     type: File
     inputBinding:
       position: 1
     label: Target sequence in PIR format
 
-  pdb:
+  template.pdb:
     type: File
     inputBinding:
       position: 2
