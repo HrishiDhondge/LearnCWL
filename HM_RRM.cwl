@@ -1,6 +1,7 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: Workflow
+label: Homology Modeling Pipeline for RRMs
 
 inputs:
   target_sequence(Fasta): 
