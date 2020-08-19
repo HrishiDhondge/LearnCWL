@@ -1,3 +1,0 @@
-target_sequence(Fasta):
-  class: File
-  path: target.fasta
