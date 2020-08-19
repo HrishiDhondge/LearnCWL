@@ -3,7 +3,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: "Structure-Template alignment [Align2d()]"
+label: "Sequence-Template alignment [Align2d()]"
 doc: |
       Align2d(), function from MODELLER, is based on a dynamic programming algorithm, 
       it is different from standard sequence-sequence alignment methods because it 
